@@ -573,9 +573,7 @@ class AutocompleteTestCase(OsisPortalTestCase):
             ),
         ]
 
-        api.return_value.list_scholarships.return_value = {
-            'results': mock_scholarships,
-        }
+        api.return_value.list_scholarships.return_value = Mock(results=mock_scholarships)
         url = reverse('admission:autocomplete:scholarship')
 
         response = self.client.get(

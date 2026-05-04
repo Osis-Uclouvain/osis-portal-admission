@@ -215,7 +215,7 @@ class ScholarshipAutocomplete(PaginatedAutocompleteMixin, autocomplete.Select2Li
             scholarship_type=self.forwarded.get('scholarship_type'),
             search=self.q,
             **self.get_webservice_pagination_kwargs(),
-        ).get('results')
+        ).results
 
     def results(self, results: List[Scholarship]):
         return [
